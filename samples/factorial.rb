@@ -42,7 +42,7 @@ end
 mod.verify
 mod.dump
 
-engine = LLVM::JITCompiler.new(mod)
+engine = LLVM::MCJITCompiler.new(mod)
 
 def rec_factorial(n)
   if n <= 1

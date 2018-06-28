@@ -9,9 +9,10 @@ module LLVM
   end
 
   # @deprecated Use LLVM.init_jit or LLVM::Target.init('X86').
-  def self.init_x86
-    warn "LLVM.init_x86 is deprecated. Use LLVM.init_jit or LLVM::Target.init('X86')."
-    LLVM::Target.init('X86')
+  def self.init_x86(*args)
+    #warn "LLVM.init_x86 is deprecated. Use LLVM.init_jit or LLVM::Target.init('X86')."
+    LLVM::Target.init_native(*args)
+    #LLVM::Target.init('X86')
   end
 
   # You need to call {Target.init} for a target to be usable.

@@ -4,8 +4,14 @@ require 'bundler/gem_tasks'
 require 'rake/testtask'
 require 'yard'
 
-require 'llvm/version'
-require 'llvm/config'
+#require './lib/llvm/version'
+#require './lib/llvm'
+module LLVM
+  #LLVM_VERSION = `llvm-config --version`
+  module CONFIG
+    CFLAGS = `llvm-config --cflags`
+  end
+end
 
 YARD::Rake::YardocTask.new do |t|
   yardlib      = File.join(File.dirname(__FILE__), "yardlib/llvm.rb")

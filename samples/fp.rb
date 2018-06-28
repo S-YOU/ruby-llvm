@@ -46,5 +46,5 @@ end
 mod.verify
 mod.dump
 
-jit = LLVM::JITCompiler.new(mod)
+jit = LLVM::MCJITCompiler.new(mod)
 puts jit.run_function(mod.functions["test"]).to_i
